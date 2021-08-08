@@ -1,0 +1,27 @@
+.main-card {
+}
+
+nav {
+  border-bottom: 0.1rem solid lightgray;
+}
+
+.main-card > nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav_links {
+  width: 8rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.nav_link_active {
+  border-bottom: 0.2rem solid skyblue;
+}

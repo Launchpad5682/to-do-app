@@ -1,2 +1,13 @@
+* {
+  margin: 0;
+}
+
 .App {
+  width: 40rem;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
 }

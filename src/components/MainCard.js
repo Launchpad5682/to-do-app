@@ -1,25 +1,42 @@
+import "../styles/MainCard.css";
 import React from "react";
 import All from "./All";
 import Completed from "./Completed";
 import Active from "./Active";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+  Redirect,
+} from "react-router-dom";
 
 function MainCard() {
   return (
     <Router>
-      <div className="App">
+      <div className="main-card">
         <nav>
-          <ul>
-            <li>
-              <Link to="/">All</Link>
-            </li>
-            <li>
-              <Link to="/active">Active</Link>
-            </li>
-            <li>
-              <Link to="/completed">Completed</Link>
-            </li>
-          </ul>
+          <NavLink
+            className="nav_links"
+            activeClassName="nav_link_active"
+            to="/all"
+          >
+            All
+          </NavLink>
+          <NavLink
+            className="nav_links"
+            activeClassName="nav_link_active"
+            to="/active"
+          >
+            Active
+          </NavLink>
+          <NavLink
+            className="nav_links"
+            activeClassName="nav_link_active"
+            to="/completed"
+          >
+            Completed
+          </NavLink>
         </nav>
         <Switch>
           <Route path="/active">
@@ -28,9 +45,10 @@ function MainCard() {
           <Route path="/completed">
             <Completed />
           </Route>
-          <Route path="/">
+          <Route path="/all">
             <All />
           </Route>
+          <Route render={() => <Redirect to={{ pathname: "/" }} />} />{" "}
         </Switch>
       </div>
     </Router>

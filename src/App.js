@@ -3,7 +3,7 @@ import "./styles/App.css";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <h1>#todo</h1>
       <MainCard />
     </div>
