@@ -38,6 +38,7 @@ function MainCard() {
             Completed
           </NavLink>
         </nav>
+
         <Switch>
           <Route path="/active">
             <Active />
