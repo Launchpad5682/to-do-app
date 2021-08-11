@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { TasksContext } from "../context/TasksContext";
+import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 
 function Checkbox(props) {
   const [tasks, setTasks] = useContext(TasksContext);
-  const [toggle, setToggle] = useState(false);
   const active = props.active;
   const completed = props.completed;
 
@@ -26,9 +26,12 @@ function Checkbox(props) {
     //console.table(tasks);
   }
 
-  const activeTasks = tasks
-    .filter((item) => item.completed === false)
-    .map((item, index) => {
+  function deleteTaskHandler() {
+    console.log("hello bro");
+  }
+
+  const activeTasks = tasks.map((item, index) => {
+    if (item.completed === false) {
       return (
         <div key={index}>
           <input
@@ -41,7 +44,11 @@ function Checkbox(props) {
           <label htmlFor={index}>{item.task}</label>
         </div>
       );
-    });
+    } else {
+      return null;
+    }
+    // .filter((item) => item.completed === false)
+  });
 
   const allTasks = tasks.map((item, index) => {
     return (
@@ -71,6 +78,7 @@ function Checkbox(props) {
             checked={item.completed}
           ></input>
           <label htmlFor={index}>{item.task}</label>
+          <DeleteOutlineIcon fontSize="small" onClick={deleteTaskHandler} />
         </div>
       );
     });
