@@ -4,10 +4,10 @@ import InputForm from "./InputForm";
 
 function Active() {
   return (
-    <h2>
+    <div>
       <InputForm />
       <Checkbox active />
-    </h2>
+    </div>
   );
 }
 
