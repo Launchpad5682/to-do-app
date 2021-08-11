@@ -26,8 +26,14 @@ function Checkbox(props) {
     //console.table(tasks);
   }
 
-  function deleteTaskHandler() {
-    console.log("hello bro");
+  function deleteTaskHandler(index) {
+    // console.log(index);
+    let updatedTasks = [...tasks];
+    // delete the element in the array
+    updatedTasks.splice(index, 1);
+    setTasks(updatedTasks);
+    // console.table(updatedTasks);
+    // console.table(tasks);
   }
 
   const activeTasks = tasks.map((item, index) => {
@@ -65,9 +71,8 @@ function Checkbox(props) {
     );
   });
 
-  const completedTasks = tasks
-    .filter((item) => item.completed === true)
-    .map((item, index) => {
+  const completedTasks = tasks.map((item, index) => {
+    if (item.completed === true) {
       return (
         <div key={index}>
           <input
@@ -78,10 +83,17 @@ function Checkbox(props) {
             checked={item.completed}
           ></input>
           <label htmlFor={index}>{item.task}</label>
-          <DeleteOutlineIcon fontSize="small" onClick={deleteTaskHandler} />
+          <DeleteOutlineIcon
+            fontSize="small"
+            onClick={() => deleteTaskHandler(index)}
+          />
         </div>
       );
-    });
+    } else {
+      return null;
+    }
+    //.filter((item) => item.completed === true)
+  });
 
   return (
     <form>{active ? activeTasks : completed ? completedTasks : allTasks}</form>
