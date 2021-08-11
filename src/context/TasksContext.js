@@ -3,9 +3,8 @@ import { useState, createContext } from "react";
 export const TasksContext = createContext();
 
 export const TasksProvider = (props) => {
-  const [tasks, setTasks] = useState([
-    { id: null, task: null, completed: false },
-  ]);
+  /*{ task: null, completed: false} */
+  const [tasks, setTasks] = useState([]);
 
   return (
     <TasksContext.Provider value={[tasks, setTasks]}>
