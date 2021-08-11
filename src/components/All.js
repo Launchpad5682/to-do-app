@@ -1,11 +1,8 @@
 import Checkbox from "./Checkbox";
-import React, { useContext } from "react";
-import { TasksContext } from "../context/TasksContext";
+import React from "react";
 import InputForm from "./InputForm";
 
 function All() {
-  const [tasks, setTasks] = useContext(TasksContext);
-
   return (
     <div>
       <InputForm />

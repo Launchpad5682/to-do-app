@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { TasksContext } from "../context/TasksContext";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 
@@ -35,6 +35,11 @@ function Checkbox(props) {
     // console.table(updatedTasks);
     // console.table(tasks);
   }
+
+  // setting data in localStorage
+  useEffect(() => {
+    localStorage.setItem("toDo", JSON.stringify(tasks));
+  }, [tasks]);
 
   const activeTasks = tasks.map((item, index) => {
     if (item.completed === false) {
