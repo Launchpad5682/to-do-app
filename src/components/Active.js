@@ -6,7 +6,7 @@ function Active() {
   return (
     <h2>
       <InputForm />
-      <Checkbox />
+      <Checkbox active />
     </h2>
   );
 }

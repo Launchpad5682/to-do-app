@@ -10,3 +10,7 @@ to create routes in Nav Bar.<br/>
 Installing material UI icons <br/>
 ```npm install @material-ui/icons```.
 
+
+
+## References
+https://stackoverflow.com/questions/42037369/how-to-edit-an-item-in-a-state-array
