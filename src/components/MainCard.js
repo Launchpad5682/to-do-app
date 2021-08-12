@@ -40,14 +40,17 @@ function MainCard() {
         </nav>
 
         <Switch>
-          <Route path="/active">
+          <Route exact path="/active">
             <Active />
           </Route>
-          <Route path="/completed">
+          <Route exact path="/completed">
             <Completed />
           </Route>
-          <Route path="/all">
+          <Route exact path="/all">
             <All />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/all" />
           </Route>
           <Route render={() => <Redirect to={{ pathname: "/" }} />} />{" "}
         </Switch>
